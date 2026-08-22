@@ -19,6 +19,7 @@ import commend.notice.MusicBoardUpdateForm;
 import commend.notice.MusicBoardView;
 import dao.MusicBoardDao;
 import dao.MusicDao;
+import dto.MusicBoardDto;
 import dto.MusicDto;
 
  
@@ -53,14 +54,35 @@ list.execute(request);
 			 
 
 			 viewPage = "/notice/notice.jsp";
+			 
 
 		    }else if("write".equals(gubun)) {
+		    	
+
+		    		String sessionId =
+		    				(String)request.getSession().getAttribute("sessionId");
+
+		    		if(sessionId == null) {
+
+		    			request.setAttribute(
+		    					"msg",
+		    					"ログイン後にご利用いただけます。"
+		    			);
+
+		    			MusicBoardList list =
+		    					new MusicBoardList();
+
+		    			list.execute(request);
+
+		    			viewPage = "/notice/notice.jsp";
+
+		    		}else {
 		    	
 		    	MusicDao dao = MusicDao.getDao();
 		    	ArrayList<MusicDto> musicList = dao.getMusicList();
 		    	request.setAttribute("musicList", musicList);
 		    	
-		    	viewPage="notice/notice_write.jsp";
+		    	viewPage="notice/notice_write.jsp";}
 		    } else if("save".equals(gubun)) {
 
 		        MusicBoardSave save = new MusicBoardSave();
@@ -73,16 +95,34 @@ list.execute(request);
 		        return;
 		    }else if("view".equals(gubun)) {
 
-		        MusicBoardView view = new MusicBoardView();
-		        view.execute(request);
+		    	String sessionId =
+		    			(String)request.getSession().getAttribute("sessionId");
 
-		        viewPage = "/notice/notice_view.jsp";
-		        
-		        }else if("write".equals(gubun)) {
-		    	MusicBoardView view = new MusicBoardView();
-		    	view.execute(request);
-		    	viewPage="/notice/notice_view.jsp";
-		    	
+		    	if(sessionId == null) {
+
+		    		request.setAttribute(
+		    				"msg",
+		    				"ログイン後にご利用いただけます。"
+		    		);
+
+		    		MusicBoardList list =
+		    				new MusicBoardList();
+
+		    		list.execute(request);
+
+		    		viewPage =
+		    				"/notice/notice.jsp";
+
+		    	} else {
+
+		    		MusicBoardView view =
+		    				new MusicBoardView();
+
+		    		view.execute(request);
+
+		    		viewPage =
+		    				"/notice/notice_view.jsp";
+		    	}
 		    }else if("updateForm".equals(gubun)) {
 
 		    	MusicBoardUpdateForm updateForm =
@@ -119,11 +159,28 @@ list.execute(request);
 
 		    	response.sendRedirect(
 		    		request.getContextPath()
-		    		+ "/Notice?t_gubun=view&t_board_no="
+		    		+ "/Notice?t_gubun=viewNoHit&t_board_no="
 		    		+ board_no
 		    	);
 
 		    	return;
+		    }else if("viewNoHit".equals(gubun)) {
+
+		    	int board_no =
+		    			Integer.parseInt(request.getParameter("t_board_no"));
+
+		    	MusicBoardDao dao = MusicBoardDao.getDao();
+
+		    	MusicBoardDto dto =
+		    			dao.getBoardView(board_no);
+
+		    	int likeCount =
+		    			dao.getLikeCount(board_no);
+
+		    	request.setAttribute("dto", dto);
+		    	request.setAttribute("likeCount", likeCount);
+
+		    	viewPage = "/notice/notice_view.jsp";
 		    }
 		 
 		 
