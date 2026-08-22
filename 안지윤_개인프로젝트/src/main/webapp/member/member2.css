@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/* ------------------- 회원가입 모달 / 컨테이너 ------------------- */
+.join_container {
+	width: 500px;
+	margin: 80px auto;
+	padding: 40px;
+	background: rgba(15, 15, 26, 0.55);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 20px;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	color: white;
+}
+
+.join_container h2 {
+	text-align: center;
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	color: #ffffff;
+}
+
+/* 폼 그룹 (라벨 + Input 세트) */
+.form_group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 18px;
+}
+
+.form_group label {
+	width: 140px;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.9);
+	text-align: left;
+}
+
+/* 입력창 기본 스타일 */
+.input_style {
+	flex: 1;
+	height: 38px;
+	padding: 0 15px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 20px;
+	color: white;
+	font-size: 14px;
+	outline: none;
+	transition: all 0.2s ease;
+}
+
+.input_style:focus {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: #9665cf;
+	box-shadow: 0 0 8px rgba(150, 101, 207, 0.5);
+}
+
+/* 이메일 입력 그룹 */
+.email_group {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex: 1;
+}
+
+.email_input {
+	width: 110px;
+}
+
+.email_at {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 14px;
+}
+
+.email_select {
+	height: 38px;
+	padding: 0 10px;
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 18px;
+	color: white;
+	font-size: 13px;
+	outline: none;
+	cursor: pointer;
+}
+
+.email_select option {
+	background: #070b18;
+	color: white;
+}
+
+/* 이용약관 동의 체크박스 */
+.agree_group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin: 25px 0;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.85);
+	cursor: pointer;
+}
+
+.agree_group input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	accent-color: #9665cf;
+	cursor: pointer;
+}
+
+/* 회원가입 제출 버튼 */
+.submit_btn_box {
+	text-align: center;
+}
+
+.submit_btn {
+	width: 100%;
+	height: 45px;
+	background: white;
+	color: #070b18;
+	font-size: 15px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit_btn:hover {
+	background: #e2bce3;
+	transform: translateY(-2px);
+}

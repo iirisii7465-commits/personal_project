@@ -1,0 +1,476 @@
+/* @charset "UTF-8";
+header.css
+
+#header {
+    width: 100%;
+    height: 70px;
+
+    background: #070b18;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 35px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+#header h1 {
+    color: white;
+}
+
+
+로고
+.logo {
+    flex: 1;
+}
+
+
+메뉴
+.menu {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    display: flex;
+    gap: 60px;
+
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+
+오른쪽 메뉴
+.right-menu {
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+회원가입 / 로그인
+
+.memberLogin {
+    display: flex;
+}
+
+.join,
+.login {
+    width: 95px;
+    height: 50px;
+
+    padding: 12px 10px 10px 12px;
+
+    border-radius: 50px;
+
+    text-align: center;
+
+    font-family: "Yu Gothic UI";
+
+    color: white;
+
+    background-color: rgba(50, 10, 92);
+
+    border: 1px solid gray;
+
+    cursor: pointer;
+}
+
+.login:hover,
+.join:hover {
+    background-color: #9665cf;
+
+    color: black;
+
+    border: 1px solid white;
+}
+
+
+다크모드
+
+.darkmood_moon {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    color: #f1c40f;
+
+    padding: 5px 10px;
+}
+
+
+언어 변경
+
+.change_lenguage {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    color: #1da1f2;
+
+    padding: 5px 10px;
+}
+
+
+===============================
+   로그인 후 회원 메뉴
+================================
+
+.login_user_menu {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.welcome_name {
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    padding-right: 12px;
+    margin-right: 2px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+.myinfo_btn,
+.logout_btn {
+    height: 36px;
+
+    padding: 0 16px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.myinfo_btn:hover {
+    background: rgba(150, 101, 207, 0.7);
+
+    border-color: #9665cf;
+}
+
+
+.logout_btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    border-color: rgba(255, 255, 255, 0.5);
+} */
+
+@charset "UTF-8";
+
+/* ===============================
+   header.css
+================================ */
+
+#header {
+    width: 100%;
+    height: 70px;
+
+    background: #070b18;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 35px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    box-sizing: border-box;
+}
+
+
+/* ===============================
+   로고
+================================ */
+
+.logo {
+    flex: 1;
+}
+
+#header h1 {
+    color: white;
+
+    margin: 0;
+
+    font-size: 26px;
+}
+
+
+/* ===============================
+   메뉴
+================================ */
+
+.menu {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: #b993e6;
+}
+
+
+/* ===============================
+   오른쪽 메뉴
+================================ */
+
+.right-menu {
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* ===============================
+   로그인 전 회원 메뉴
+================================ */
+
+.memberLogin {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* 회원가입 / 로그인 */
+
+.join,
+.login {
+    height: 36px;
+
+    padding: 0 16px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}
+
+.login:hover,
+.join:hover {
+    background: rgba(150, 101, 207, 0.7);
+
+    border-color: #9665cf;
+}
+
+
+/* ===============================
+   로그인 후 회원 메뉴
+================================ */
+
+.login_user_menu {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* 환영 문구 */
+
+.welcome_name {
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    padding-right: 12px;
+    margin-right: 2px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/* 마이페이지 / 로그아웃 */
+
+.myinfo_btn,
+.logout_btn {
+    height: 36px;
+
+    padding: 0 16px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}
+
+
+/* 마이페이지 hover */
+
+.myinfo_btn:hover {
+    background: rgba(150, 101, 207, 0.7);
+
+    border-color: #9665cf;
+}
+
+
+/* 로그아웃 hover */
+
+.logout_btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ===============================
+   다크모드
+================================ */
+
+.darkmood_moon {
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    color: #f1c40f;
+
+    padding: 5px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ===============================
+   언어 변경
+================================ */
+
+.change_lenguage {
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    color: #1da1f2;
+
+    padding: 5px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

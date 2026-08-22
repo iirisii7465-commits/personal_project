@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<title>YamMusic - Music Recommendation Write</title>
+
+<link href="notice_write2.css" rel="stylesheet">
+
+<script src="member/login_function.js" defer></script>
+
+</head>
+<body>
+
+<!-- ================= Header ================= -->
+
+<header id="header">
+
+    <div class="logo">
+        <h1>YamMusic</h1>
+    </div>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">特徴</a></li>
+            <li><a href="#">料金プラン</a></li>
+            <li><a href="#">人気チャート</a></li>
+        </ul>
+    </nav>
+
+    <div class="right-menu">
+
+        <div class="memberLogin">
+            <button class="join">会員登録</button>
+            &nbsp;&nbsp;
+            <button class="login">ログイン</button>
+        </div>
+
+        <button class="darkmood_moon">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="change_lenguage">
+            <i class="fa-solid fa-globe"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ================= Main ================= -->
+<section id="recommend_write">
+
+    <div class="write_title">
+        <p class="sub_title">MUSIC COMMUNITY</p>
+        <h1>おすすめの音楽を共有しよう</h1>
+        <p class="title_desc">
+            お気に入りの曲や、その曲をおすすめしたい理由をみんなと共有してください。
+        </p>
+    </div>
+
+
+    <form name="notice">
+
+        <input type="hidden" name="t_gubun" value="save">
+
+        <div class="write_container">
+
+
+            <!-- 곡 정보 -->
+            <div class="song_section">
+
+                <div class="section_title">
+                    <span>01</span>
+                    <h3>楽曲情報</h3>
+                </div>
+
+
+                <div class="song_row">
+
+                    <div class="form_group">
+                        <label>曲名</label>
+
+                        <select name="t_song"
+                                class="song_select"
+                                onchange="changeSong()">
+
+                            <option value="">曲を選択してください</option>
+                            <option value="ネオンの海">ネオンの海</option>
+                            <option value="0.5秒の空白">0.5秒の空白</option>
+                            <option value="無重力サマー">無重力サマー</option>
+                            <option value="レモンソーダの夜">レモンソーダの夜</option>
+                            <option value="あの日の君へ">あの日の君へ</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="form_group">
+                        <label>アーティスト</label>
+
+                        <input type="text"
+                               name="t_artist"
+                               class="artist_input"
+                               placeholder="曲を選択すると表示されます"
+                               readonly>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 추천 이유 -->
+            <div class="review_section">
+
+                <div class="section_title">
+                    <span>02</span>
+                    <h3>おすすめ理由</h3>
+                </div>
+
+                <textarea name="t_reason"
+                          class="reason_text"
+                          maxlength="300"
+                          placeholder="この曲をおすすめしたい理由を書いてください。"></textarea>
+
+                <div class="text_info">
+                    最大300文字
+                </div>
+
+            </div>
+
+
+
+            <!-- 감상 -->
+            <div class="review_section">
+
+                <div class="section_title">
+                    <span>03</span>
+                    <h3>感想</h3>
+                </div>
+
+                <textarea name="t_content"
+                          class="content_text"
+                          maxlength="1000"
+                          placeholder="曲を聴いて感じたことや、好きなポイントを書いてください。"></textarea>
+
+                <div class="text_info">
+                    最大1000文字
+                </div>
+
+            </div>
+
+
+
+            <!-- 작성자 -->
+            <div class="writer_section">
+
+                <div class="writer_info">
+                    <span class="writer_label">投稿者</span>
+
+                    <!-- 로그인한 ID로 나중에 교체 -->
+                    <span class="writer_name">yamuser01</span>
+                </div>
+
+
+                <div class="button_area">
+
+                    <button type="button"
+                            class="cancel_button">
+                        キャンセル
+                    </button>
+
+                    <button type="button"
+                            class="submit_button"
+                            onclick="goSave()">
+                        投稿する
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </form>
+
+</section>
+
+<!-- ================= Footer ================= -->
+
+<footer id="footer">
+
+    <div class="footer_bottom">
+        <p>© 2026 YamMusic Inc. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+</body>
+</html>

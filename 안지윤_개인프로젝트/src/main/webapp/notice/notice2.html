@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Track27 안지윤</title>
+<link href="notice2.css" rel="stylesheet">
+<script src="member/login_function.js" defer></script>
+<!-- 기능가져와서쓸때 링크걸어줘야됨 -->
+</head>
+<header id="header">
+
+		<div class="logo">
+			<h1>YamMusic</h1>
+		</div>
+
+		<nav class="menu">
+			<ul>
+				<li><a href="#">ホーム</a></li>
+				<li><a href="#">特徴</a></li>
+				<li><a href="#">料金プラン</a></li>
+				<li><a href="#">人気チャート</a></li>
+			</ul>
+		</nav>
+
+		<div class="right-menu">
+
+			<div class="memberLogin">
+
+
+				<button class="join">会員登録</button>
+				&nbsp;&nbsp;
+				<button class="login">ログイン</button>
+			</div>
+
+			<button class="darkmood_moon" type="button">
+				<i class="fa-solid fa-moon"></i>
+			</button>
+			<button class="change_lenguage" type="button">
+				<i class="fa-solid fa-globe"></i>
+			</button>
+
+
+		</div>
+
+	</header>
+
+<body>
+<section id="recommend">
+		<div class="recommend_title_box">
+			<h3>Music Recommendation</h3>
+			<p>おすすめの音楽を共有して、新しい音楽を見つけてみましょう。</p>
+		</div>
+
+		<div class="content_container">
+
+			<!-- 검색 및 글쓰기 바 -->
+			<div class="search_box_1">
+				<div class="search_left">
+					<select class="select">
+						<option value="title">タイトル</option>
+						<option value="content">内容</option>
+					</select>
+					<input type="text" class="text_box" placeholder="検索語を入力">
+					<input type="button" class="search_button" value="検索">
+				</div>
+
+				<div class="btn_box">
+					<button class="write_button">投稿する</button>
+				</div>
+			</div>
+
+			<!-- 게시글 4개 카드 목록 -->
+			<div class="content_boxing">
+
+				<!-- 카드 1 -->
+				<div class="content">
+					<div class="content_picture_1"></div>
+					<div class="content_info">
+						<span class="content_title">曲名：Lost in Shoreline</span>
+						<div class="content_bottom">
+							<span class="content_author">投稿者：ホン・ギルドン</span>
+							<button type="button" class="like_btn">
+								<i class="fa-solid fa-heart"></i>
+								<span class="like_count">128</span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- 카드 2 -->
+				<div class="content">
+					<div class="content_picture_1"></div>
+					<div class="content_info">
+						<span class="content_title">曲名：Night City Pop</span>
+						<div class="content_bottom">
+							<span class="content_author">投稿者：アン・ジユン</span>
+							<button type="button" class="like_btn">
+								<i class="fa-solid fa-heart"></i>
+								<span class="like_count">85</span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- 카드 3 -->
+				<div class="content">
+					<div class="content_picture_1"></div>
+					<div class="content_info">
+						<span class="content_title">曲name：Jazzy Evening</span>
+						<div class="content_bottom">
+							<span class="content_author">投稿者：ヤムヤム</span>
+							<button type="button" class="like_btn">
+								<i class="fa-solid fa-heart"></i>
+								<span class="like_count">42</span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- 카드 4 -->
+				<div class="content">
+					<div class="content_picture_1"></div>
+					<div class="content_info">
+						<span class="content_title">曲名：Summer Breeze</span>
+						<div class="content_bottom">
+							<span class="content_author">投稿者：ユーザー1</span>
+							<button type="button" class="like_btn">
+								<i class="fa-solid fa-heart"></i>
+								<span class="like_count">19</span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Track27 안지윤</title>
+<title>Insert title here</title>
+<link href="member2.css" rel="stylesheet">
+</head>
+<body>
+<div class="join_container">
+	<h2>新規会員登録</h2>
+
+	<form action="#" method="post">
+		<!-- 이름 -->
+		<div class="form_group">
+			<label for="userName">お名前 (氏名)</label>
+			<input type="text" id="userName" class="input_style" required>
+		</div>
+
+		<!-- 아이디 -->
+		<div class="form_group">
+			<label for="userId">利用するID</label>
+			<input type="text" id="userId" class="input_style" required>
+		</div>
+
+		<!-- 비밀번호 -->
+		<div class="form_group">
+			<label for="userPw">利用するパスワード</label>
+			<input type="password" id="userPw" class="input_style" required>
+		</div>
+
+		<!-- 비밀번호 확인 -->
+		<div class="form_group">
+			<label for="userPwConfirm">パスワード (確認)</label>
+			<input type="password" id="userPwConfirm" class="input_style" required>
+		</div>
+
+		<!-- 전화번호 -->
+		<div class="form_group">
+			<label for="userPhone">電話番号</label>
+			<input type="tel" id="userPhone" class="input_style" placeholder="010-0000-0000">
+		</div>
+
+		<!-- 이메일 -->
+		<div class="form_group">
+			<label>メールアドレス</label>
+			<div class="email_group">
+				<input type="text" class="input_style email_input">
+				<span class="email_at">@</span>
+				<select class="email_select">
+					<option value="naver.com">naver.com</option>
+					<option value="gmail.com">gmail.com</option>
+					<option value="yahoo.co.jp">yahoo.co.jp</option>
+					<option value="direct">直接入力</option>
+				</select>
+			</div>
+		</div>
+
+		<!-- 약관 동의 -->
+		<label class="agree_group">
+			<input type="checkbox" required>
+			<span>利用規約とプライバシーポリシーに同意します</span>
+		</label>
+
+		<!-- 등록 버튼 -->
+		<div class="submit_btn_box">
+			<button type="submit" class="submit_btn">会員登録する (無料)</button>
+		</div>
+	</form>
+</div>
+</body>
+</html>
