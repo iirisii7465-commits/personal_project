@@ -1,0 +1,682 @@
+@charset "UTF-8";
+
+.modal_login{
+	/* display: none; */
+	justify-content: center;
+	width:100%;
+	height:100%;
+	
+	align-items:center;
+	
+	border:100px solid black;
+	background-color: black;
+	
+	
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+		
+
+	
+ }
+
+ body{
+ background-color:black;
+		background-image: url("../images/움직이는선.png");
+	    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+	min-height: 100vh;  /* 이미지넣을려면 높이필요함 배경화면 */
+	 backdrop-filter:blur(5px); 
+
+	
+} 
+
+
+.container {
+	
+	width: 100%;
+	max-width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	border: 2px dashed red; /* 컨테이너 확인용 */
+	
+	
+	
+}
+#header {
+	width: 100%;
+	height: 70px;
+	background: #070b18;
+	display: flex;
+	align-items: center;
+	padding: 0 35px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#header h1 {
+	color: white;
+}
+
+.darkmood_moon {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	color: #f1c40f; /* 항상 노란색으로 고정 */
+	padding: 5px 10px;
+}
+
+.change_lenguage {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	color: #1da1f2;
+	padding: 5px 10px;
+}
+
+.memberLogin {
+	display: flex;
+}
+
+.join {
+	
+	width: 95px;
+	height: 50px;
+	padding: 12px 10px 10px 12px;
+	background-color: white;
+	border-radius: 50px;
+	text-align:center;
+	font-family: "Yu Gothic UI";
+	color: white;
+	background-color: rgba(50, 10, 92);
+	border-color: gray;
+	cursor:pointer;
+	border : 1px solid gray;
+}
+
+.login {
+	width: 95px;
+	height: 50px;
+	padding: 12px 10px 10px 12px;
+	background-color: white;
+	border-radius: 50px;
+	text-align: center;
+	font-family: "Yu Gothic UI";
+	color: white;
+	background-color: rgba(50, 10, 92);
+	margin-top: 0px;
+	border: 1px solid gray;
+	cursor: pointer;
+}
+
+.login:hover, .join:hover {
+	background-color: #9665cf;
+	color: black;
+	border: 1px solid white;
+}
+
+.logo {
+	flex: 1;
+}
+
+.menu {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.menu ul {
+	display: flex;
+	gap: 60px;
+	list-style: none;
+}
+
+.menu a {
+	text-decoration: none;
+	color: white;
+}
+
+.right-menu {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 25px;
+}
+
+
+
+#join_section{	
+	min-height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	
+}
+
+.join_question{
+	padding-left: 50px;
+	
+}
+
+.join_container{
+	margin-top:70px;
+	width:500px;
+	height:550px;
+	border: 2px solid black;
+	border-radius: 10%;
+	backdrop-filter:blur(15px);
+	background-color: rgba(0, 0, 0, 0.25);
+	 backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+	align-items: center;  /* 글자가운데, 버튼,,등 가운데정렬 */
+	 text-align: center;
+	padding-top: 25px;
+	border: 3px solid rgba(255, 255, 255, 0.15);
+  	
+}
+
+.join_container h1{
+	font-size: 30px;
+	font-family:"Noto Sans JP", sans-serif;
+	font-weight:600;
+	color:white;
+	margin-bottom: 20px;
+	
+}
+
+.join_container h3{
+		font-family:"Noto Sans JP", sans-serif;
+	font-weight:400;
+	color:white;
+	
+	
+}
+.name_input {
+	
+	width:170px;
+	height:35px;
+	margin-bottom: 13px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding-left: 20px;
+    background: transparent;
+	color:white;
+	
+	outline:none;
+	font-size: 17px;
+}
+.namebox{
+	margin-left: 30px;
+	margin-right: 20px;
+}
+
+.idbox{
+	margin-left:45px;
+	margin-right: 30px;
+	
+	
+}
+
+
+
+.tellbox{
+	margin-left: 50px;
+	margin-right: 45px;
+	
+}
+
+
+
+.name_input:focus,
+.id_input:focus,
+.password_input:focus,
+.password_check:focus,
+.tell_input:focus,
+.mail_input:focus,
+.mail_addre:focus {
+	color:white !important;
+  opacity: 1;
+  
+  border: 2px solid rgba(255, 255, 255, 0.4);
+ 
+}
+  /* background: transparent;  *//* 입력 중에도 배경을 계속 투명하게 유지 */
+ /*  opacity:1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  border:2px solid white; */
+   /* 포커스됐을 때 테두리를 조금 더 밝게 (선택사항) */
+	
+.name_input:focus,
+.id_input:focus,
+.password_input:focus,
+.password_check:focus,
+.tell_input:focus,
+.mail_input:focus,
+.mail_addre:focus
+ {
+  border-color: #ffffff;                    /* 포커스 시 테두리 진한 흰색 */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.join_group{
+	display:flex;
+}
+
+.id_input{
+	width:170px;
+	height:35px;
+	margin-bottom: 13px;
+border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding-left: 20px;
+    background: transparent;
+	color:white;
+	margin-left:15px;
+	outline:none;
+	font-size: 17px;
+	
+}
+
+.password_input{
+	width:170px;
+	height:35px;
+	margin-bottom: 13px;
+border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding-left: 20px;
+    background: transparent;
+	color:white;
+	margin-left:15px;
+	outline:none;
+	font-size: 17px;
+	
+	
+}
+
+.password_check{
+	width:170px;
+	height:35px;
+	margin-bottom: 13px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding-left: 20px;
+    background: transparent;
+	color:white;
+	margin-left:15px;
+	outline:none;
+	font-size: 17px;
+	
+	
+}
+
+.tell_input{
+	width:170px;
+	height:35px;
+	margin-bottom: 13px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding-left: 20px;
+    background: transparent;
+	color:white;
+	margin-left:15px;
+	outline:none;
+	font-size: 17px;
+	
+	
+}
+
+.mail_input{
+	width:125px;
+	height:35px;
+	margin-bottom: 13px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding-left: 20px;
+    background: transparent;
+	color:white;
+	margin-left:15px;
+	outline:none;
+	font-size: 17px;
+}
+
+
+.mail_addre{
+		width:120px;
+	height:35px;
+	margin-bottom: 13px;
+	background-color: transparent; /* 또는 어두운 반투명 rgba(0, 0, 0, 0.3) */
+  color: white; /* 텍스트 흰색 */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+.mail_addre option{
+	background-color: black;
+	color:white;
+	border-radius: 25px;
+	
+}
+
+.address_sign{
+	margin-left:5px;
+	margin-right:5px;
+	color:white;
+	font-size: 18px
+}
+
+
+.info_text{
+	
+	color:white;
+}
+
+.check_info{
+	margin-top: 10px;
+	
+}
+
+.join_button button{
+	height:55px;
+	width:300px;
+	margin-top: 35px;
+		font-family:"Noto Sans JP", sans-serif;
+	font-weight:500;
+	font-size: 17px;
+	border-radius: 30px;
+	cursor: pointer;
+
+}
+
+
+
+.join_button button:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+
+
+.join_button button {
+    transition: 0.3s;
+}
+
+
+
+.id_check_btn {
+	width: 95px;
+	height: 35px;
+	margin-left: 10px;
+
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 20px;
+
+	background-color: rgba(50, 10, 92, 0.8);
+	color: white;
+
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+
+.id_check_btn:hover {
+	background-color: #9665cf;
+	border-color: white;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.id_check_btn:active {
+	transform: scale(0.96);
+}
+
+
+
+/* ==============================
+   회원정보 페이지
+================================ */
+
+#myinfo_section {
+
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* 전체 카드 */
+
+.myinfo_container {
+
+    width: 560px;
+
+    padding: 60px 45px 60px;
+
+    box-sizing: border-box;
+
+    border-radius: 28px;
+
+    background: rgba(20, 15, 50, 0.45);
+
+    border: 2px solid rgba(255,255,255,0.22);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.myinfo_container {
+    transform: translateY(70px);
+}
+/* 제목 */
+
+.myinfo_container h1 {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 27px;
+}
+
+
+.myinfo_title_line {
+
+    width: 55px;
+    height: 3px;
+
+    margin: 8px auto 20px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ff73b9,
+        #7857ff
+    );
+}
+
+
+/* 한 줄 */
+
+.myinfo_group {
+
+    display: flex;
+    align-items: center;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* 왼쪽 */
+
+.myinfo_label {
+
+    width: 185px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+}
+
+
+.myinfo_label i {
+
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 19px;
+
+    color: #f2a0ff;
+}
+
+
+.myinfo_label h3 {
+
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* 오른쪽 */
+
+.myinfo_value {
+
+    flex: 1;
+
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    border-radius: 13px;
+
+    background: rgba(20,15,50,0.25);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* 패스워드 변경 버튼 */
+
+.password_change_box {
+
+    justify-content: center;
+}
+
+
+.password_change_btn {
+
+    width: 120px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        90deg,
+        #d84fa8,
+        #7045db
+    );
+}
+
+
+/* 아래 버튼 */
+
+.myinfo_button_box {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+
+.myinfo_button_box button {
+
+    width: 180px;
+    height: 45px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.myinfo_update_btn {
+
+    color: white;
+
+    border: none;
+
+    background: linear-gradient(
+        90deg,
+        #d84fa8,
+        #7045db
+    );
+}
+
+
+.myinfo_back_btn {
+
+    color: white;
+
+    background: rgba(20,15,50,0.25);
+
+    border: 1px solid rgba(255,255,255,0.35);
+}
