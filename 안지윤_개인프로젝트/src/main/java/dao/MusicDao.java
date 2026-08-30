@@ -25,7 +25,7 @@ public class MusicDao {
     }
 
     
-    
+    //음악목록가져오기
     public ArrayList<MusicDto> getMusicList(){
     ArrayList<MusicDto>list = new ArrayList<MusicDto>();
     

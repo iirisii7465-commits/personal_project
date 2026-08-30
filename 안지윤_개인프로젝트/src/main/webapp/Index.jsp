@@ -14,7 +14,7 @@
 <script src="member/login_function.js" defer></script> <!-- 기능가져와서쓸때 링크걸어줘야됨 -->
 <script type="text/javascript">
 function goJoin(gubun){
-	work.t_gubun.value =gubun;
+	work.t_gubun.value =join;
 	work.method="post";
 	work.action="Member";
 	work.submit();

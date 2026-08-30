@@ -11,38 +11,56 @@ public class MusicBoardUpdate implements CommonExcute {
 	@Override
 	public void execute(HttpServletRequest request) {
 
-	    System.out.println("===== update 들어옴 =====");
+		int board_no =
+				Integer.parseInt(
+						request.getParameter("t_board_no")
+				);
 
-	    int board_no =
-	        Integer.parseInt(request.getParameter("t_board_no"));
+		String recommend_reason =
+				request.getParameter("t_recommend_reason");
 
-	    String recommend_reason =
-	        request.getParameter("t_recommend_reason");
+		String board_content =
+				request.getParameter("t_board_content");
 
-	    String board_content =
-	        request.getParameter("t_board_content");
 
-	    MusicBoardDto dto = new MusicBoardDto();
+		MusicBoardDto dto =
+				new MusicBoardDto();
 
-	    dto.setBoard_no(board_no);
-	    dto.setBoard_content(board_content);
-	    dto.setRecommend_reason(recommend_reason);
+		dto.setBoard_no(board_no);
+		dto.setRecommend_reason(recommend_reason);
+		dto.setBoard_content(board_content);
 
-	    MusicBoardDao dao = MusicBoardDao.getDao();
 
-	    int result = dao.updateBoard(dto);
+		MusicBoardDao dao =
+				MusicBoardDao.getDao();
 
-	    System.out.println("result = " + result);
+		int result =
+				dao.updateBoard(dto);
 
-	    String msg = "修正に失敗しました。";
 
-	    if(result == 1) {
-	        msg = "修正されました。";
-	    }
+		if(result == 1) {
 
-	    request.setAttribute("msg", msg);
+			request.setAttribute(
+					"t_msg",
+					"投稿を修正しました。"
+			);
 
-	    MusicBoardDto viewDto = dao.getBoardView(board_no);
-	    request.setAttribute("dto", viewDto);
+			request.setAttribute(
+					"t_url",
+					"Notice?t_gubun=viewNoHit&t_board_no=" + board_no
+			);
+
+		}else {
+
+			request.setAttribute(
+					"t_msg",
+					"投稿の修正に失敗しました。"
+			);
+
+			request.setAttribute(
+					"t_url",
+					"Notice?t_gubun=viewNoHit&t_board_no=" + board_no
+			);
+		}
 	}
 }

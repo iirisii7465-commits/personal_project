@@ -1,106 +1,137 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java"
+	contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
+<title>Track27 안지윤</title>
+
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<title>Track27 안지윤</title>
-<title>Insert title here</title>
-<link href="member/member.css" rel="stylesheet">
-</head>
-<script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript">
 
+
+<link
+	href="${pageContext.request.contextPath}/member/member.css"
+	rel="stylesheet">
+
+
+<script
+	src="${pageContext.request.contextPath}/js/jquery-1.8.1.min.js">
+</script>
+
+
+<script
+	src="${pageContext.request.contextPath}/js/common.js">
+</script>
+
+
+<script
+	src="${pageContext.request.contextPath}/member/login_function.js"
+	defer>
+</script>
+
+
+<script type="text/javascript">
 
 function goSave(){
 	 if(checkEmpty(mem.t_name,"お名前を入力してください。")) return;
-    if(checkEmpty(mem.t_id,"IDを入力してください。")) return;
+   if(checkEmpty(mem.t_id,"IDを入力してください。")) return;
 
-    if(mem.t_id_check.value==""){
-        alert("IDの重複確認を行ってください。");
-        return;
-    }
+   if(mem.t_id_check.value==""){
+       alert("IDの重複確認を行ってください。");
+       return;
+   }
 
-    if(mem.t_id_check.value=="使用不可"){
-        alert("このIDは使用できません。");
-        mem.t_id.focus();
-        return;
-    }
+   if(mem.t_id_check.value=="使用不可"){
+       alert("このIDは使用できません。");
+       mem.t_id.focus();
+       return;
+   }
 
-   
+  
 
-    if(checkEmpty(mem.t_password,"パスワードを入力してください。")) return;
+   if(checkEmpty(mem.t_password,"パスワードを入力してください。")) return;
 
-    if(checkEmpty(mem.t_password_confirm,"確認用パスワードを入力してください。")) return;
+   if(checkEmpty(mem.t_password_confirm,"確認用パスワードを入力してください。")) return;
 
-    if(mem.t_password.value != mem.t_password_confirm.value){
-        alert("パスワードが一致していません。");
-        mem.t_password_confirm.focus();
-        return;
-    }
+   if(mem.t_password.value != mem.t_password_confirm.value){
+       alert("パスワードが一致していません。");
+       mem.t_password_confirm.focus();
+       return;
+   }
 
-    if(checkEmpty(mem.t_email_1,"メールアドレスを入力してください。")) return;
+   if(checkEmpty(mem.t_email_1,"メールアドレスを入力してください。")) return;
 
-    if(checkEmpty(mem.t_email_2,"メールアドレスを選択してください。")) return;
+   if(checkEmpty(mem.t_email_2,"メールアドレスを選択してください。")) return;
 
-    if(!mem.t_agree.checked){
-        alert("利用規約とプライバシーポリシーに同意してください。");
-        mem.t_agree.focus();
-        return;
-    }
+   if(!mem.t_agree.checked){
+       alert("利用規約とプライバシーポリシーに同意してください。");
+       mem.t_agree.focus();
+       return;
+   }
 
-    mem.t_gubun.value="memberSave";
-    mem.method="post";
-    mem.action="Member";
-    mem.submit();
+   mem.t_gubun.value="memberSave";
+   mem.method="post";
+   mem.action="Member";
+   mem.submit();
 }
- //중복검사
+//중복검사
 function checkId(){
 
-    if(checkEmpty(mem.t_id,"IDを入力してから重複確認を行ってください。")) return;
+   if(checkEmpty(mem.t_id,"IDを入力してから重複確認を行ってください。")) return;
 
-    var id = mem.t_id.value;
+   var id = mem.t_id.value;
 
-    $.ajax({
-        type : "POST",
-        url : "Member",
+   $.ajax({
+       type : "POST",
+       url : "Member",
 
-        data : {
-            t_gubun : "checkId",
-            t_id : id
-        },
+       data : {
+           t_gubun : "checkId",
+           t_id : id
+       },
 
-        dataType : "text",
+       dataType : "text",
 
-        error : function(){
-            alert("通信に失敗しました。");
-        },
+       error : function(){
+           alert("通信に失敗しました。");
+       },
 
-        success : function(data){
+       success : function(data){
 
-            var result = $.trim(data);
+           var result = $.trim(data);
 
-            mem.t_id_check.value = result;
+           mem.t_id_check.value = result;
 
-            if(result == "使用可能"){
-                alert("使用可能なIDです。");
+           if(result == "使用可能"){
+               alert("使用可能なIDです。");
 
-            }else if(result == "使用不可"){
-                alert("このIDはすでに使用されています。");
+           }else if(result == "使用不可"){
+               alert("このIDはすでに使用されています。");
 
-            }else{
-                alert("サーバーからの応答に問題があります。");
-            }
-        }
-    });
+           }else{
+               alert("サーバーからの応答に問題があります。");
+           }
+       }
+   });
 }
- function setEmpty(){
-     mem.t_id_check.value="";
-  }
- </script>
+function setEmpty(){
+    mem.t_id_check.value="";
+ }
+
+</script>
+
+</head>
+
+<body>
+
+
 <body>
 
 <%@ include file="../common_header.jsp" %>
@@ -177,7 +208,7 @@ function checkId(){
 </div>
 </form>
    </section>
-
+   <%@ include file="member_login_modal.jsp" %>
 </body>
 
 </html>

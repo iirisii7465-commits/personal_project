@@ -56,7 +56,7 @@ public class MusicBoardList implements CommonExcute {
 			total_page = total_page + 1;
 		}
 
-		// 현재 페이지에서 가져올 DB row 범위
+		// 현재 페이지에서 가져올 DB  범위
 		int start = (current_page - 1) * list_setup_count + 1;
 		int end = current_page * list_setup_count;
 

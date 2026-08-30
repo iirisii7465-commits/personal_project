@@ -10,25 +10,40 @@ public class MusicBoardView implements CommonExcute {
 
 	@Override
 	public void execute(HttpServletRequest request) {
-				
-		int board_no = Integer.parseInt(request.getParameter("t_board_no"));
-		
-		MusicBoardDao dao = MusicBoardDao.getDao();
-		
-		
-		
+
+		int board_no =
+				Integer.parseInt(
+						request.getParameter("t_board_no")
+				);
+
+		MusicBoardDao dao =
+				MusicBoardDao.getDao();
+
+
+		// 조회수 증가
 		dao.setHitCount(board_no);
-		
-		//히트수증가후에 상세조회보기
-		MusicBoardDto dto = dao.getBoardView(board_no);
-		int likeCount =dao.getLikeCount(board_no);
-		
-		
-		//jsp로보내기
-		request.setAttribute("dto", dto);
-		request.setAttribute("likeCount", likeCount);
-		
-		
+
+
+		// 조회수 증가 후 상세조회
+		MusicBoardDto dto =
+				dao.getBoardView(board_no);
+
+
+		// 좋아요 수
+		int likeCount =
+				dao.getLikeCount(board_no);
+
+
+		// JSP로 전달
+		request.setAttribute(
+				"t_dto",
+				dto
+		);
+
+		request.setAttribute(
+				"likeCount",
+				likeCount
+		);
 	}
 
 }

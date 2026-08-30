@@ -13,39 +13,62 @@ public class MemberSave implements CommonExcute {
 
 	@Override
 	public void execute(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		//dto만들어야되고 저장하는dao에다가보내줘야됨
-		//받아온값 파라미터로 저장준비 저장하고나서 담아주고>알럿으로이동하는거
+
 		MemberDao dao = MemberDao.getDao();
+
 		String id = request.getParameter("t_id");
 		String name = request.getParameter("t_name");
 		String password = request.getParameter("t_password");
-		//패스워드길이알고나서, 패스워드암호화해주기
-		String password_length = Integer.toString(password.length());
+
+		// 암호화 전 비밀번호 길이
+		String password_length =
+				Integer.toString(password.length());
+
+		// 비밀번호 암호화
 		try {
+
 			password = dao.encryptSHA256(password);
-		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
+
+		} catch(NoSuchAlgorithmException e) {
+
 			e.printStackTrace();
 		}
-	
-		String email_1 = request.getParameter("t_email_1");
-		String email_2 = request.getParameter("t_email_2");
-		
 
-		
-		String reg_date = CommonUtil.getTodayTime();
-		MemberDto dto = new MemberDto(id, name, password, password_length, email_1, email_2, reg_date, "탈퇴일");
-			  
-		int result =dao.memberSave(dto);
+		String email_1 =
+				request.getParameter("t_email_1");
+
+		String email_2 =
+				request.getParameter("t_email_2");
+
+		// 가입일
+		String reg_date =
+				CommonUtil.getTodayTime();
+
+
+		// DTO 생성
+		MemberDto dto = new MemberDto(
+				id,
+				name,
+				password,
+				password_length,
+				email_1,
+				email_2,
+				reg_date,
+				null,   // update_date
+				null    // exit_date
+		);
+
+
+		int result =
+				dao.memberSave(dto);
+
+
 		String msg = result == 1
-		        ? name + "様、会員登録が完了しました。"
-		        : "会員登録に失敗しました。";
+				? name + "様、会員登録が完了しました。"
+				: "会員登録に失敗しました.";
+
+
 		request.setAttribute("t_msg", msg);
 		request.setAttribute("t_url", "index");
-				
-		
-		
 	}
-
 }

@@ -7,27 +7,37 @@
 <title>Insert title here</title>
 <link href="main.css" rel="stylesheet">
 <script type="text/javascript">
+
 function goLogin() {
 
     var login = document.login;
 
-    if(login.t_id.value == ""){
-        alert("IDを入力してください。");
+    if(login.t_id.value == "") {
+
+        alert("IDを入力してください.");
+
         login.t_id.focus();
+
         return;
     }
 
-    if(login.t_password.value == ""){
-        alert("パスワードを入力してください。");
+
+    if(login.t_password.value == "") {
+
+        alert("パスワードを入力してください.");
+
         login.t_password.focus();
+
         return;
     }
 
-   
 
-     login.method = "post";
-    login.action = "Member";
-    login.submit(); 
+    login.method = "post";
+
+    login.action =
+        "${pageContext.request.contextPath}/Member";
+
+    login.submit();
 }
 
 </script>
