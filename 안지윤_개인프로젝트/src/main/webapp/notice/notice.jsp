@@ -83,9 +83,6 @@
 				<div class="content_container">
 
 
-					<!-- ==============================
-			     검색 영역
-			============================== -->
 
 					<div class="search_container">
 
@@ -97,7 +94,6 @@
 						<div class="search_box_1">
 
 
-							<!-- 검색 조건 -->
 							<div class="select_box">
 
 
@@ -127,7 +123,6 @@
 
 
 
-							<!-- 검색어 -->
 							<div class="text">
 
 
@@ -139,7 +134,6 @@
 
 
 
-							<!-- 검색 버튼 -->
 							<div class="search_btcontainer">
 
 
@@ -151,7 +145,6 @@
 
 
 
-							<!-- 글쓰기 -->
 							<div class="btn_box">
 
 
@@ -171,10 +164,6 @@
 
 
 
-					<!-- ==============================
-			     게시글 카드
-			============================== -->
-
 					<div class="content_boxing">
 
 
@@ -185,7 +174,6 @@
 								onclick="location.href='${pageContext.request.contextPath}/Notice?t_gubun=view&t_board_no=${board.board_no}'">
 
 
-								<!-- 앨범 이미지 -->
 								<div class="content_picture_1"
 									style="
 								background-image:
@@ -195,7 +183,6 @@
 
 
 
-								<!-- 카드 내용 -->
 								<div class="content_info">
 
 
@@ -210,7 +197,6 @@
 
 
 
-									<!-- 카드 하단 -->
 									<div class="content_bottom">
 
 
@@ -238,10 +224,6 @@
 					</div>
 
 
-
-					<!-- ==============================
-			     페이징
-			============================== -->
 
 					<div class="paging">${pageDisplay}</div>
 
@@ -275,7 +257,6 @@
 
 
 
-	<!-- 로그인 모달 -->
 	<%@ include file="../member/member_login.jsp"%>
 
 
